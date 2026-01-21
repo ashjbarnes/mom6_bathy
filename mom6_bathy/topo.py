@@ -279,37 +279,37 @@ class Topo:
         assert "depth" in ds_topo, f"Cannot find the 'depth' field in topog file {topog_file_path}"
         depth = ds_topo["depth"]
 
-        if depth.shape[0] < self._grid.ny or depth.shape[1] < self._grid.nx:
+        if depth.ny.shape[0] < self._grid.ny or depth.nx.shape[0] < self._grid.nx:
             raise ValueError(
                 f"Topography data in {topog_file_path} is smaller than the grid size "
                 f"({depth.shape[0]}x{depth.shape[1]} < {self._grid.ny}x{self._grid.nx}). "
             )
         elif depth.shape[0] > self._grid.ny or depth.shape[1] > self._grid.nx:
             assert (
-                'geolat' in ds_topo and 'geolon' in ds_topo
-            ), f"Topog file {topog_file_path} does not contain geolat and geolon fields, "
+                'lat' in ds_topo and 'lon' in ds_topo
+            ), f"Topog file {topog_file_path} does not contain lat and lon fields, "
             "which are required to determine if the grid is a subgrid of the topog file, "
             "since the topography data is larger than the grid (in index space). "
 
             # Determine if the grid is a subgrid of the topog file
-            geolat = ds_topo['geolat']
-            geolon = ds_topo['geolon']
+            lat = ds_topo['lat']
+            lon = ds_topo['lon']
 
             # find the closest cell in the topog file to the (sub)grid's origin (southwest corner)
             topog_kdtree =  cKDTree(
-                np.column_stack((geolat.data.flatten(), geolon.data.flatten()))
+                np.column_stack((lat.data.flatten(), lon.data.flatten()))
             )
             _, indices = topog_kdtree.query(
                 [self._grid.tlat[0, 0].item(), self._grid.tlon[0, 0].item()]
             )
-            cj, ci = np.unravel_index(indices, geolon.shape)
+            cj, ci = np.unravel_index(indices, lon.shape)
 
-            assert 0 <= cj <= geolat.shape[0] - self._grid.ny, (
+            assert 0 <= cj <= lat.shape[0] - self._grid.ny, (
                 f"Topography data in {topog_file_path} appears to only contain a subregion "
                 f"of the grid, and does not contain enough rows to accommodate the grid size "
                 f"({self._grid.ny}). "
             )
-            assert 0 <= ci <= geolon.shape[1] - self._grid.nx, (
+            assert 0 <= ci <= lon.shape[1] - self._grid.nx, (
                 f"Topography data in {topog_file_path} appears to only contain a subregion "
                 f"of the grid, and does not contain enough columns to accommodate the grid size "
                 f"({self._grid.nx}). "
@@ -320,14 +320,14 @@ class Topo:
             grid_overlaps_topo = (
                 np.all(
                     np.isclose(
-                        geolat[cj:cj + self._grid.ny, ci:ci + self._grid.nx],
+                        lat[cj:cj + self._grid.ny, ci:ci + self._grid.nx],
                         self._grid.tlat.data,
                         rtol=1e-5
                     )
                 )
                 and np.all(
                     np.isclose(
-                        geolon[cj:cj + self._grid.ny, ci:ci + self._grid.nx],
+                        lon[cj:cj + self._grid.ny, ci:ci + self._grid.nx],
                         self._grid.tlon.data,
                         rtol=1e-5
                     )

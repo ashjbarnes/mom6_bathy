@@ -486,7 +486,7 @@ class Grid:
 
         # read supergrid dataset
         assert (
-            ds.x.units == ds.y.units and "degree" in ds.x.units
+           "degree" in ds.x.units and "degree" in ds.y.units
         ), "Only degrees units are supported in supergrid files"
 
         # check supergrid
