@@ -64,6 +64,7 @@ class Grid:
         nx: int = None,
         ny: int = None,
         resolution: Optional[float] = None,
+        resolution_lat: Optional[float] = None,
         xstart: float = 0.0,
         ystart: Optional[float] = None,
         cyclic_x: bool = False,
@@ -87,6 +88,12 @@ class Grid:
             grid resolution in degrees. If provided, the grid
             dimensions are computed based on the resolution:
             nx = int(lenx / resolution) and ny = int(leny / resolution)
+        resolution_lat : float, optional
+            grid resolution for in latitude. If provided, this sets the 
+            latitudinal grid spacing under the `rectilinear_cartesian` method.
+            If not set, the latitudinal grid spacing is automatically scaled
+            based on the latitude and `resolution` so that dx and dy represent
+            roughly equal distances at the domain centre.
         xstart : float, optional
             starting x coordinate. 0.0 by default.
         ystart : float, optional
@@ -142,9 +149,10 @@ class Grid:
             self.supergrid = RectilinearCartesianSupergrid.from_extents(
                 lon_min=xstart,
                 len_x=lenx,
+                resolution=resolution,
                 lat_min=ystart,
                 len_y=leny,
-                resolution=resolution,
+                resolution_lat=resolution_lat
             )
         else:
             raise ValueError(f"Unsupported grid type: {type}")

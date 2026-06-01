@@ -349,19 +349,36 @@ class UniformSphericalSupergrid(SupergridBase):
 
 
 class RectilinearCartesianSupergrid(SupergridBase):
-    """MOM6-style supergrid with uniform Cartesian spacing (x/y in meters). Originally by Ashley Barnes in regional_mom6"""
+    """MOM6-style supergrid set by providing domain extents and horizontal grid spacings in degrees. If latitudinal spacing dy is not provided, the default behaviour is to scale dy so that dx and dy are roughly equal in length (as measured in km) in the centre of the domain.  Originally by Ashley Barnes in regional_mom6"""
 
     @classmethod
     def from_extents(
-        cls, lon_min, len_x, lat_min, len_y, resolution, radius=_DEFAULT_RADIUS
-    ):
-        x, y = cls._build_grid(lon_min, len_x, lat_min, len_y, resolution)
+        cls, lon_min, len_x, resolution, lat_min, len_y, resolution_lat = None, radius=_DEFAULT_RADIUS
+    ): 
+        """Define a cartesian grid given domain extents and zonal (+ meridional, optional) resolution
+
+        Parameters
+        ----------
+        lon_min, lat_min: float
+            Points defining the southwestern corner of the domain
+        len_x, len_y: float
+            Extent of the domain in longitude and latitude
+        resolution : float
+            Longitudinal grid spacing
+        resolution_lat : float
+            Latitudinal grid spacing (optional)
+            Default behaviour scales resolution_lat so that the centre of the domain is roughly 'square' when measured with kilometres rather than degrees. 
+            This means that domains further from the equator won't have grids that are as 'stretched' as if dx = dy. 
+        radius:
+            Sphere radius in metres. Defaults to Earth's IUGG mean radius.
+        """
+        x, y = cls._build_grid(lon_min, len_x, resolution, lat_min, len_y, resolution_lat)
         return cls._init_from_xy(
             x, y, "rectilinear_cartesian", radius, angles_are_zero=True
         )
 
     @classmethod
-    def _build_grid(self, lon_min, len_x, lat_min, len_y, resolution):
+    def _build_grid(self, lon_min, len_x, resolution, lat_min, len_y, resolution_lat):
         """Compute x,y for even physical spacing."""
         lon_max = lon_min + len_x
         lat_max = lat_min + len_y
@@ -372,11 +389,14 @@ class RectilinearCartesianSupergrid(SupergridBase):
 
         lons = np.linspace(lon_min, lon_max, nx)  # longitudes in degrees
 
-        # Latitudes evenly spaced by dx * cos(central_latitude)
+        # Latitudes evenly spaced by resolution * cos(central_latitude)
         central_latitude = np.mean([lat_min, lat_max])  # degrees
-        latitudinal_resolution = resolution * np.cos(np.deg2rad(central_latitude))
+        if resolution_lat == None:
+            # Default behaviour: Scale latitude grid spacing so that 
+            # at domain centre each grid dx & dy are roughly equal when measured in km.  
+            resolution_lat = resolution * np.cos(np.deg2rad(central_latitude))
 
-        ny = int(len_y / (latitudinal_resolution / 2)) + 1
+        ny = int(len_y / (resolution_lat / 2)) + 1
 
         if ny % 2 != 1:
             ny += 1
@@ -391,6 +411,8 @@ class RectilinearCartesianSupergrid(SupergridBase):
 
         # ensure that longitudes are uniformly spaced
         dlons = lons[1] - lons[0]
+        print(lons)
+        print(dlons)
         assert np.allclose(
             np.diff(lons), dlons * np.ones(np.size(lons) - 1)
         ), "provided array of longitudes must be uniformly spaced"
