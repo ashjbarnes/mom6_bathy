@@ -284,14 +284,14 @@ class RectilinearCartesianSupergrid(SupergridBase):
     """MOM6-style supergrid with uniform Cartesian spacing (x/y in meters). Originally by Ashley Barnes in regional_mom6"""
 
     def __init__(
-        self, lon_min, len_x, lat_min, len_y, resolution, radius=_DEFAULT_RADIUS
+        self, lon_min, len_x, lat_min, len_y, resolution, resolution_lat = None,radius=_DEFAULT_RADIUS
     ):
         x, y, dx, dy, area, angle, axis_units = self._build_grid(
-            lon_min, len_x, lat_min, len_y, resolution, radius
+            lon_min, len_x, lat_min, len_y, resolution, resolution_lat, radius
         )
         super().__init__(x, y, dx, dy, area, angle, axis_units)
 
-    def _build_grid(self, lon_min, len_x, lat_min, len_y, resolution, radius):
+    def _build_grid(self, lon_min, len_x, lat_min, len_y, resolution,resolution_lat, radius):
         """Compute full grid geometry for even physical spacing."""
         lon_max = lon_min + len_x
         lat_max = lat_min + len_y
@@ -302,11 +302,13 @@ class RectilinearCartesianSupergrid(SupergridBase):
 
         lons = np.linspace(lon_min, lon_max, nx)  # longitudes in degrees
 
-        # Latitudes evenly spaced by dx * cos(central_latitude)
-        central_latitude = np.mean([lat_min, lat_max])  # degrees
-        latitudinal_resolution = resolution * np.cos(np.deg2rad(central_latitude))
 
-        ny = int(len_y / (latitudinal_resolution / 2)) + 1
+        # If latitude spacing not provided, Latitudes evenly spaced by dx * cos(central_latitude)
+        if resolution_lat == None:
+            central_latitude = np.mean([lat_min, lat_max])  # degrees
+            resolution_lat = resolution * np.cos(np.deg2rad(central_latitude))
+
+        ny = int(len_y / (resolution_lat / 2))
 
         if ny % 2 != 1:
             ny += 1

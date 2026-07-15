@@ -64,6 +64,7 @@ class Grid:
         nx: int = None,
         ny: int = None,
         resolution: Optional[float] = None,
+        resolution_lat: Optional[float] = None,
         xstart: float = 0.0,
         ystart: Optional[float] = None,
         cyclic_x: bool = False,
@@ -145,6 +146,7 @@ class Grid:
                 lat_min=ystart,
                 len_y=leny,
                 resolution=resolution,
+                resolution_lat = resolution_lat
             )
         else:
             raise ValueError(f"Unsupported grid type: {type}")
