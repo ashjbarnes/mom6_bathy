@@ -17,8 +17,6 @@
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -93,9 +91,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#module-mom6_forge.mapping">mom6_forge.mapping module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#mom6_forge.mapping.compute_cressman_weights"><code class="docutils literal notranslate"><span class="pre">compute_cressman_weights()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mom6_forge.mapping.compute_smoothing_weights"><code class="docutils literal notranslate"><span class="pre">compute_smoothing_weights()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mom6_forge.mapping.dst_to_source"><code class="docutils literal notranslate"><span class="pre">dst_to_source()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mom6_forge.mapping.extract_coastline_mask"><code class="docutils literal notranslate"><span class="pre">extract_coastline_mask()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mom6_forge.mapping.gen_rof_maps"><code class="docutils literal notranslate"><span class="pre">gen_rof_maps()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mom6_forge.mapping.generate_ESMF_map_via_esmpy"><code class="docutils literal notranslate"><span class="pre">generate_ESMF_map_via_esmpy()</span></code></a></li>
@@ -106,10 +102,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#mom6_forge.mapping.grid_from_esmf_mesh"><code class="docutils literal notranslate"><span class="pre">grid_from_esmf_mesh()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mom6_forge.mapping.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mom6_forge.mapping.rank"><code class="docutils literal notranslate"><span class="pre">rank()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mom6_forge.mapping.regrid_dataset_via_cressman"><code class="docutils literal notranslate"><span class="pre">regrid_dataset_via_cressman()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mom6_forge.mapping.regrid_dataset_via_xesmf"><code class="docutils literal notranslate"><span class="pre">regrid_dataset_via_xesmf()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mom6_forge.mapping.regrid_with_subsampling"><code class="docutils literal notranslate"><span class="pre">regrid_with_subsampling()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mom6_forge.mapping.source_to_dst"><code class="docutils literal notranslate"><span class="pre">source_to_dst()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mom6_forge.mapping.sum_weights"><code class="docutils literal notranslate"><span class="pre">sum_weights()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mom6_forge.mapping.write_mapping_file"><code class="docutils literal notranslate"><span class="pre">write_mapping_file()</span></code></a></li>
 </ul>
@@ -128,13 +121,11 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#module-mom6_forge.utils">mom6_forge.utils module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#mom6_forge.utils.cell_area_rad"><code class="docutils literal notranslate"><span class="pre">cell_area_rad()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mom6_forge.utils.compute_subsampling_factor"><code class="docutils literal notranslate"><span class="pre">compute_subsampling_factor()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mom6_forge.utils.fill_missing_data"><code class="docutils literal notranslate"><span class="pre">fill_missing_data()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mom6_forge.utils.get_avg_resolution"><code class="docutils literal notranslate"><span class="pre">get_avg_resolution()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mom6_forge.utils.get_avg_resolution_km"><code class="docutils literal notranslate"><span class="pre">get_avg_resolution_km()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mom6_forge.utils.get_mesh_dimensions"><code class="docutils literal notranslate"><span class="pre">get_mesh_dimensions()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mom6_forge.utils.is_mesh_cyclic_x"><code class="docutils literal notranslate"><span class="pre">is_mesh_cyclic_x()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mom6_forge.utils.iterative_fill"><code class="docutils literal notranslate"><span class="pre">iterative_fill()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mom6_forge.utils.longitude_slicer"><code class="docutils literal notranslate"><span class="pre">longitude_slicer()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mom6_forge.utils.normalize_deg"><code class="docutils literal notranslate"><span class="pre">normalize_deg()</span></code></a></li>
 </ul>
@@ -851,64 +842,6 @@ and has consistent units.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="mom6_forge.grid.Grid.from_center">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">from_center</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">center_lat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_lon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width_m</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height_m</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution_m</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle_deg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#mom6_forge.grid.Grid" title="mom6_forge.grid.Grid"><span class="pre">Grid</span></a></span></span><a class="headerlink" href="#mom6_forge.grid.Grid.from_center" title="Link to this definition"></a></dt>
-<dd><p>Create a rotated rectangular grid centred at a geographic point.</p>
-<p>Uses an azimuthal equidistant projection centred at (center_lat, center_lon)
-and rotates the domain by angle_deg clockwise from north. Useful for aligning
-a regional domain with a coastline feature — for example, placing one grid
-boundary perpendicular to an estuary mouth.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>center_lat</strong> (<em>float</em>) – Geographic centre of the domain in degrees.</p></li>
-<li><p><strong>center_lon</strong> (<em>float</em>) – Geographic centre of the domain in degrees.</p></li>
-<li><p><strong>width_m</strong> (<em>float</em>) – Domain width (x) and height (y) in metres.</p></li>
-<li><p><strong>height_m</strong> (<em>float</em>) – Domain width (x) and height (y) in metres.</p></li>
-<li><p><strong>resolution_m</strong> (<em>float</em>) – Grid resolution in metres.</p></li>
-<li><p><strong>angle_deg</strong> (<em>float</em><em>, </em><em>optional</em>) – Clockwise rotation from north in degrees. Default 0 (north-up).
-Example: angle_deg=45 places the x-axis along a NE–SW estuary mouth.</p></li>
-<li><p><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the grid.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#mom6_forge.grid.Grid" title="mom6_forge.grid.Grid">Grid</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="mom6_forge.grid.Grid.from_projection">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">from_projection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">crs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_min</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_max</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_min</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_max</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution_m</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#mom6_forge.grid.Grid" title="mom6_forge.grid.Grid"><span class="pre">Grid</span></a></span></span><a class="headerlink" href="#mom6_forge.grid.Grid.from_projection" title="Link to this definition"></a></dt>
-<dd><p>Create a Grid from projected coordinate extents.</p>
-<p>Builds a uniform grid in the given pyproj CRS (e.g., polar stereographic,
-Lambert conformal) and reprojects to geographic coordinates. Grid metrics
-are computed using exact great-circle geometry, making this accurate at high
-latitudes where RectilinearCartesianSupergrid degrades.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>crs</strong> (<em>pyproj.CRS</em><em>, </em><em>int</em><em>, or </em><em>str</em>) – <dl class="simple">
-<dt>Map projection. Examples:</dt><dd><p>”EPSG:3995”  — Arctic Polar Stereographic
-“EPSG:3031”  — Antarctic Polar Stereographic</p>
-</dd>
-</dl>
-</p></li>
-<li><p><strong>x_min</strong> (<em>float</em>) – Projected x extent in metres.</p></li>
-<li><p><strong>x_max</strong> (<em>float</em>) – Projected x extent in metres.</p></li>
-<li><p><strong>y_min</strong> (<em>float</em>) – Projected y extent in metres.</p></li>
-<li><p><strong>y_max</strong> (<em>float</em>) – Projected y extent in metres.</p></li>
-<li><p><strong>resolution_m</strong> (<em>float</em>) – Grid resolution in metres.</p></li>
-<li><p><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the grid.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#mom6_forge.grid.Grid" title="mom6_forge.grid.Grid">Grid</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="mom6_forge.grid.Grid.from_supergrid">
 <span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">from_supergrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#mom6_forge.grid.Grid" title="mom6_forge.grid.Grid"><span class="pre">Grid</span></a></span></span><a class="headerlink" href="#mom6_forge.grid.Grid.from_supergrid" title="Link to this definition"></a></dt>
 <dd><p>Create a Grid instance from a supergrid file.</p>
@@ -950,9 +883,9 @@ If not provided, the name will be derived from the file name.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="mom6_forge.grid.Grid.get_bounding_boxes">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">get_bounding_boxes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hgrid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.grid.Grid.get_bounding_boxes" title="Link to this definition"></a></dt>
-<dd><p>Extract lat/lon bounding boxes for each edge of a regional MOM6 grid.
+<dt class="sig sig-object py" id="mom6_forge.grid.Grid.get_bounding_boxes_of_rectangular_grid">
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">get_bounding_boxes_of_rectangular_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hgrid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.grid.Grid.get_bounding_boxes_of_rectangular_grid" title="Link to this definition"></a></dt>
+<dd><p>Extract lat/lon bounding boxes for each edge of a rectangular regional MOM6 grid.
 This function is used when subsetting global datasets (e.g. GLORYS)
 down to the lat/lon ranges required for efficient regridding:</p>
 <blockquote>
@@ -982,12 +915,6 @@ down to the lat/lon ranges required for efficient regridding:</p>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="mom6_forge.grid.Grid.get_esmf_ready_tracer_ds">
-<span class="sig-name descname"><span class="pre">get_esmf_ready_tracer_ds</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.grid.Grid.get_esmf_ready_tracer_ds" title="Link to this definition"></a></dt>
-<dd><p>This is to generate a ds that esmf/xesmf can use for regridding. It contains the tlat and tlon coordinates and the area variable (tarea) that can be used as weights for conservative regridding.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1023,17 +950,9 @@ down to the lat/lon ranges required for efficient regridding:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="mom6_forge.grid.Grid.is_rectangular">
-<span class="sig-name descname"><span class="pre">is_rectangular</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#mom6_forge.grid.Grid.is_rectangular" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">is_rectangular</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rtol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#mom6_forge.grid.Grid.is_rectangular" title="Link to this definition"></a></dt>
 <dd><p>Check if the grid is a rectangular lat-lon grid by comparing the
 first and last rows and columns of the tlon and tlat arrays.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>atol</strong> (<em>float</em><em>, </em><em>optional</em>) – Absolute tolerance in degrees for the lat/lon comparisons. An
-absolute (rather than relative) tolerance is used because the
-coordinates are angles: the acceptable deviation must not scale
-with longitude/latitude magnitude.</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1141,7 +1060,7 @@ nominal resolution (by default) of the actual computational grid.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="mom6_forge.grid.Grid.update_supergrid">
-<span class="sig-name descname"><span class="pre">update_supergrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xdat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ydat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#mom6_forge.grid.Grid.update_supergrid" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">update_supergrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xdat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ydat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">array</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#mom6_forge.grid.Grid.update_supergrid" title="Link to this definition"></a></dt>
 <dd><p>Update the supergrid x and y coordinates. Running this method
 also updates the nominal grid coordinates and metrics.</p>
 <dl class="field-list simple">
@@ -1149,7 +1068,6 @@ also updates the nominal grid coordinates and metrics.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>xdat</strong> (<em>np.array</em>) – 2-dimensional array of the new x coordinates.</p></li>
 <li><p><strong>ydat</strong> (<em>np.array</em>) – 2-dimensional array of the new y coordinates.</p></li>
-<li><p><strong>grid_type</strong> (<em>str</em>) – The grid type of the passed in x and y arrays</p></li>
 </ul>
 </dd>
 </dl>
@@ -1179,39 +1097,6 @@ during runtime.</p>
 <dt class="sig sig-object py" id="mom6_forge.grid_creator.GridCreator">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">mom6_forge.grid_creator.</span></span><span class="sig-name descname"><span class="pre">GridCreator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">t.Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">t.Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.grid_creator.GridCreator" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">HBox</span></code></p>
-<p>Interactive Jupyter widget for creating and saving MOM6 horizontal grids.</p>
-<p>The widget has two modes depending on how it is constructed:</p>
-<section id="create-mode-gridcreator">
-<h3>Create Mode  (<code class="docutils literal notranslate"><span class="pre">GridCreator()</span></code>)<a class="headerlink" href="#create-mode-gridcreator" title="Link to this heading"></a></h3>
-<p>Select a creation method, then press <strong>Select Region</strong> and interact with the map:</p>
-<dl class="simple">
-<dt>Lat/Lon Corners<span class="classifier">drag a rectangle on the PlateCarree map →</span></dt><dd><p>uniform-degree Grid via <code class="docutils literal notranslate"><span class="pre">Grid(lenx,</span> <span class="pre">leny,</span> <span class="pre">...)</span></code></p>
-</dd>
-<dt>From Center<span class="classifier">set width/height/resolution/angle, click once to place the</span></dt><dd><p>domain centre → <code class="docutils literal notranslate"><span class="pre">Grid.from_center(...)</span></code></p>
-</dd>
-<dt>From Projection<span class="classifier">set a CRS + resolution, drag a rectangle on the native</span></dt><dd><p>projection map → <code class="docutils literal notranslate"><span class="pre">Grid.from_projection(...)</span></code></p>
-</dd>
-</dl>
-</section>
-<section id="edit-mode-gridcreator-grid-some-latlon-grid">
-<h3>Edit Mode  (<code class="docutils literal notranslate"><span class="pre">GridCreator(grid=some_latlon_grid)</span></code>)<a class="headerlink" href="#edit-mode-gridcreator-grid-some-latlon-grid" title="Link to this heading"></a></h3>
-<p>Accepts a lat/lon grid only — init args are backed out from the supergrid
-properties and exposed as live sliders.  Passing a <em>projected</em> grid raises
-<code class="docutils literal notranslate"><span class="pre">ValueError</span></code> because the creation parameters are not stored in the supergrid
-file.  Projected grids created <em>within this session</em> can be edited via their
-Recreate panel (the session holds the init args in memory).</p>
-</section>
-<section id="library">
-<h3>Library<a class="headerlink" href="#library" title="Link to this heading"></a></h3>
-<p>Grids are saved as NetCDF supergrids under <code class="docutils literal notranslate"><span class="pre">&lt;working_dir&gt;/GridLibrary/</span></code>.
-The dropdown lists all <code class="docutils literal notranslate"><span class="pre">grid_*.nc</span></code> files there.  Loading a projected grid
-from the library is not supported (parameters cannot be recovered from the file).</p>
-</section>
-<section id="map-projection">
-<h3>Map projection<a class="headerlink" href="#map-projection" title="Link to this heading"></a></h3>
-<p>Entering “From Projection” mode switches the cartopy axes to the native
-projection for the selected CRS (preset EPSG codes only; unknown codes fall
-back to PlateCarree).  All other modes use PlateCarree.</p>
 <p>Public constructor</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="mom6_forge.grid_creator.GridCreator.construct_control_panel">
@@ -1225,7 +1110,7 @@ back to PlateCarree).  All other modes use PlateCarree.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="mom6_forge.grid_creator.GridCreator.load_grid">
-<span class="sig-name descname"><span class="pre">load_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.grid_creator.GridCreator.load_grid" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">load_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.grid_creator.GridCreator.load_grid" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -1234,13 +1119,8 @@ back to PlateCarree).  All other modes use PlateCarree.</p>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="mom6_forge.grid_creator.GridCreator.plot_world">
-<span class="sig-name descname"><span class="pre">plot_world</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.grid_creator.GridCreator.plot_world" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="mom6_forge.grid_creator.GridCreator.refresh_library_dropdown">
-<span class="sig-name descname"><span class="pre">refresh_library_dropdown</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.grid_creator.GridCreator.refresh_library_dropdown" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="mom6_forge.grid_creator.GridCreator.refresh_commit_dropdown">
+<span class="sig-name descname"><span class="pre">refresh_commit_dropdown</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.grid_creator.GridCreator.refresh_commit_dropdown" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -1259,63 +1139,15 @@ back to PlateCarree).  All other modes use PlateCarree.</p>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="mom6_forge.grid_creator.GridCreator.update_grid_details">
-<span class="sig-name descname"><span class="pre">update_grid_details</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">change</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.grid_creator.GridCreator.update_grid_details" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="mom6_forge.grid_creator.GridCreator.update_commit_details">
+<span class="sig-name descname"><span class="pre">update_commit_details</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">change</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.grid_creator.GridCreator.update_commit_details" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
-</section>
 </dd></dl>
 
 </section>
 <section id="module-mom6_forge.mapping">
 <span id="mom6-forge-mapping-module"></span><h2>mom6_forge.mapping module<a class="headerlink" href="#module-mom6_forge.mapping" title="Link to this heading"></a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="mom6_forge.mapping.compute_cressman_weights">
-<span class="sig-prename descclassname"><span class="pre">mom6_forge.mapping.</span></span><span class="sig-name descname"><span class="pre">compute_cressman_weights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_ds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst_ds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smooth_scl</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cressman_exp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">6371000.0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dataset</span></span></span><a class="headerlink" href="#mom6_forge.mapping.compute_cressman_weights" title="Link to this definition"></a></dt>
-<dd><p>Compute Cressman distance-weighted interpolation weights from a regular
-source grid to a model destination grid. Mirrors <code class="docutils literal notranslate"><span class="pre">interp_smooth.f90</span></code> from
-the tx2_3 topography workflow.</p>
-<p>For each ocean destination cell <code class="docutils literal notranslate"><span class="pre">i</span></code>:</p>
-<ul class="simple">
-<li><p>The smoothing radius is <code class="docutils literal notranslate"><span class="pre">L</span> <span class="pre">=</span> <span class="pre">smooth_scl</span> <span class="pre">*</span> <span class="pre">sqrt(dst_area[i])</span></code> (metres).</p></li>
-<li><p>All source ocean points within <code class="docutils literal notranslate"><span class="pre">L</span></code> are gathered.</p></li>
-<li><p>Weights are <code class="docutils literal notranslate"><span class="pre">w</span> <span class="pre">=</span> <span class="pre">((L²-r²)/(L²+r²))^cressman_exp</span></code> where <code class="docutils literal notranslate"><span class="pre">r</span></code> is the
-great-circle arc distance from the model cell centre to the source point.</p></li>
-<li><p>Row <code class="docutils literal notranslate"><span class="pre">i</span></code> of the returned matrix holds the normalised weights
-(sum = 1) for destination cell <code class="docutils literal notranslate"><span class="pre">i</span></code>.</p></li>
-</ul>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>src_ds</strong> (<em>xr.Dataset</em>) – Must have 1D coordinates <code class="docutils literal notranslate"><span class="pre">lon</span></code> and <code class="docutils literal notranslate"><span class="pre">lat</span></code>, and a 2D variable <code class="docutils literal notranslate"><span class="pre">depth</span></code>
-of shape (ny_src, nx_src), positive-down. Land cells should be &lt;= 0.</p></li>
-<li><p><strong>dst_ds</strong> (<em>xr.Dataset</em>) – Must have 2D variables or coordinates <code class="docutils literal notranslate"><span class="pre">lon</span></code>, <code class="docutils literal notranslate"><span class="pre">lat</span></code>, <code class="docutils literal notranslate"><span class="pre">area</span></code>, and
-<code class="docutils literal notranslate"><span class="pre">mask</span></code> of shape (ny_dst, nx_dst).</p></li>
-<li><p><strong>smooth_scl</strong> (<em>float</em>) – Smoothing scale multiplier: <code class="docutils literal notranslate"><span class="pre">L</span> <span class="pre">=</span> <span class="pre">smooth_scl</span> <span class="pre">*</span> <span class="pre">sqrt(cell_area)</span></code>.
-Default <code class="docutils literal notranslate"><span class="pre">2.0</span></code> (matches tx2_3 default).</p></li>
-<li><p><strong>cressman_exp</strong> (<em>float</em>) – Exponent for the Cressman weight function. Default <code class="docutils literal notranslate"><span class="pre">2.0</span></code>.</p></li>
-<li><p><strong>radius</strong> (<em>float</em>) – Earth radius in metres. Default is 6,371,000 m.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><p>ESMF-compatible weights dataset with the following variables:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">S</span></code>: non-zero Cressman weights, shape (n_s,)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">row</span></code>: destination cell index for each weight, 1-based, shape (n_s,)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">col</span></code>: source cell index for each weight, 1-based, shape (n_s,)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">unfilled</span></code>: bool mask, True for ocean destination cells that had no
-source ocean point within <code class="docutils literal notranslate"><span class="pre">L</span></code> and need a fallback fill, shape (n_b,)</p></li>
-<li><p>source/destination grid metadata variables (<code class="docutils literal notranslate"><span class="pre">xc_a</span></code>, <code class="docutils literal notranslate"><span class="pre">yc_a</span></code>, <code class="docutils literal notranslate"><span class="pre">xc_b</span></code>,
-<code class="docutils literal notranslate"><span class="pre">yc_b</span></code>, <code class="docutils literal notranslate"><span class="pre">mask_a</span></code>, <code class="docutils literal notranslate"><span class="pre">mask_b</span></code>, <code class="docutils literal notranslate"><span class="pre">area_b</span></code>, etc.)</p></li>
-</ul>
-</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>xr.Dataset</p>
-</dd>
-</dl>
-</dd></dl>
-
 <dl class="py function">
 <dt class="sig sig-object py" id="mom6_forge.mapping.compute_smoothing_weights">
 <span class="sig-prename descclassname"><span class="pre">mom6_forge.mapping.</span></span><span class="sig-name descname"><span class="pre">compute_smoothing_weights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mesh_ds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rmax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xv_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yv_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.mapping.compute_smoothing_weights" title="Link to this definition"></a></dt>
@@ -1335,20 +1167,6 @@ source ocean point within <code class="docutils literal notranslate"><span class
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>scipy.sparse.coo_matrix</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="mom6_forge.mapping.dst_to_source">
-<span class="sig-prename descclassname"><span class="pre">mom6_forge.mapping.</span></span><span class="sig-name descname"><span class="pre">dst_to_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds_weights</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst_idx_2d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.mapping.dst_to_source" title="Link to this definition"></a></dt>
-<dd><p>Given a 2D destination index and a weights file, find which source pixels contribute to it.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ds_weights</strong> (<em>xr.Dataset   SCRIP-format weight dataset</em>)</p></li>
-<li><p><strong>dst_idx_2d</strong> (<em>tuple</em><em> (</em><em>j</em><em>, </em><em>i</em><em>) </em><em>2D index into destination grid</em>)</p></li>
-</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -1523,39 +1341,8 @@ is needed to create a regridder.</p>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="mom6_forge.mapping.regrid_dataset_via_cressman">
-<span class="sig-prename descclassname"><span class="pre">mom6_forge.mapping.</span></span><span class="sig-name descname"><span class="pre">regrid_dataset_via_cressman</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_ds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst_ds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smooth_scl</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cressman_exp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_to_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">PosixPath('cressman_regridded.nc')</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Dataset</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#mom6_forge.mapping.regrid_dataset_via_cressman" title="Link to this definition"></a></dt>
-<dd><p>Compute mask-aware Cressman weights, save to an ESMF weights file, and regrid
-source depths to the destination model grid using <code class="docutils literal notranslate"><span class="pre">xe.Regridder</span></code>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>src_ds</strong> (<em>xr.Dataset</em>) – Must have 1D coordinates <code class="docutils literal notranslate"><span class="pre">lon</span></code> and <code class="docutils literal notranslate"><span class="pre">lat</span></code>, and a 2D variable <code class="docutils literal notranslate"><span class="pre">depth</span></code>
-of shape (ny_src, nx_src), positive-down. Land cells should be &lt;= 0.</p></li>
-<li><p><strong>dst_ds</strong> (<em>xr.Dataset</em>) – Must have 2D variables or coordinates <code class="docutils literal notranslate"><span class="pre">lon</span></code>, <code class="docutils literal notranslate"><span class="pre">lat</span></code>, <code class="docutils literal notranslate"><span class="pre">area</span></code>, and
-<code class="docutils literal notranslate"><span class="pre">mask</span></code> of shape (ny_dst, nx_dst).</p></li>
-<li><p><strong>weights_path</strong> (<em>str</em><em> or </em><em>Path</em>) – Path where the ESMF-compatible weights netCDF will be written.
-If the file already exists it is <strong>overwritten</strong>.</p></li>
-<li><p><strong>smooth_scl</strong> (<em>float</em>) – Cressman smoothing scale multiplier. Default <code class="docutils literal notranslate"><span class="pre">2.0</span></code>.</p></li>
-<li><p><strong>cressman_exp</strong> (<em>float</em>) – Cressman weight function exponent. Default <code class="docutils literal notranslate"><span class="pre">2.0</span></code>.</p></li>
-<li><p><strong>write_to_file</strong> (<em>bool</em>) – If True, save the regridded dataset to <code class="docutils literal notranslate"><span class="pre">output_path</span></code>. Default <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
-<li><p><strong>output_path</strong> (<em>Path</em>) – Path for the regridded output netCDF. Default <code class="docutils literal notranslate"><span class="pre">cressman_regridded.nc</span></code>.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p><strong>depth_dst</strong> (<em>xr.Dataset, shape (ny_dst, nx_dst)</em>) – Cressman-interpolated depth field. Unfilled ocean cells are 0.</p></li>
-<li><p><strong>unfilled</strong> (<em>np.ndarray of bool, shape (ny_dst, nx_dst)</em>) – True for ocean cells that had no source ocean point within radius L
-and therefore need a fallback (e.g. iterative neighbour fill).</p></li>
-</ul>
-</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
 <dt class="sig sig-object py" id="mom6_forge.mapping.regrid_dataset_via_xesmf">
-<span class="sig-prename descclassname"><span class="pre">mom6_forge.mapping.</span></span><span class="sig-name descname"><span class="pre">regrid_dataset_via_xesmf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regridding_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_to_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PosixPath('regridded_dataset.nc')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reuse_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">locstream_out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">periodic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.mapping.regrid_dataset_via_xesmf" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">mom6_forge.mapping.</span></span><span class="sig-name descname"><span class="pre">regrid_dataset_via_xesmf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regridding_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_to_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PosixPath('regridded_dataset.nc')</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.mapping.regrid_dataset_via_xesmf" title="Link to this definition"></a></dt>
 <dd><p>Regrids the dataset given <code class="docutils literal notranslate"><span class="pre">input_dataset</span></code> which contains the original dataset and <code class="docutils literal notranslate"><span class="pre">output_dataset</span></code> which is a template for the regridded product.
 Uses xESMF for regridding.</p>
 <dl class="field-list simple">
@@ -1563,54 +1350,11 @@ Uses xESMF for regridding.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>input_dataset</strong> (<em>Xarray Dataset</em>) – original dataset with proper  metadata and structure for ESMF regridding.</p></li>
 <li><p><strong>output_dataset</strong> (<em>Xarray Dataset</em>) – Template for the regridded dataset regridding_method: (Optional[str]) The type of regridding method to use. Defaults to bilinear</p></li>
-<li><p><strong>write_to_file</strong> (<em>Optional</em><em>[</em><em>bool</em><em>]</em>) – Files saved to <code class="docutils literal notranslate"><span class="pre">output_path</span></code> Defaults to <code class="docutils literal notranslate"><span class="pre">False</span></code>. Must be set to true if using manual regridding methods with ESMF_regrid.</p></li>
-<li><p><strong>weights_path</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Path to pre-computed regridding weights file.</p></li>
-<li><p><strong>output_path</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Path to save the regridded dataset if <code class="docutils literal notranslate"><span class="pre">write_to_file</span></code> is True. Defaults to “regridded_dataset.nc”.</p></li>
-<li><p><strong>reuse_weights</strong> (<em>Optional</em><em>[</em><em>bool</em><em>]</em>) – Whether to reuse the weights from <code class="docutils literal notranslate"><span class="pre">weights_path</span></code> if provided. Defaults to False. If False, weights will be recomputed even if <code class="docutils literal notranslate"><span class="pre">weights_path</span></code> is provided. If True, weights will be reused from <code class="docutils literal notranslate"><span class="pre">weights_path</span></code> if provided, and an error will be raised if <code class="docutils literal notranslate"><span class="pre">weights_path</span></code> is not provided.</p></li>
-<li><p><strong>locstream_out</strong> (<em>Optional</em><em>[</em><em>bool</em><em>]</em>) – Whether the output grid is a location stream. Defaults to False.</p></li>
-<li><p><strong>periodic</strong> (<em>Optional</em><em>[</em><em>bool</em><em>]</em>) – Whether the grid is periodic in the longitude direction. Defaults to False.</p></li>
+<li><p><strong>write_to_file</strong> (<em>Optional</em><em>[</em><em>bool</em><em>]</em>) – Files saved to <code class="docutils literal notranslate"><span class="pre">output_dir</span></code> Defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code>. Must be set to true if using manual regridding methods with ESMF_regrid.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>regridded_dataset (Xarray.Dataset)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="mom6_forge.mapping.regrid_with_subsampling">
-<span class="sig-prename descclassname"><span class="pre">mom6_forge.mapping.</span></span><span class="sig-name descname"><span class="pre">regrid_with_subsampling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qlon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qlat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nx_sub</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ny_sub</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regridding_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'nearest_s2d'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regridder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.mapping.regrid_with_subsampling" title="Link to this definition"></a></dt>
-<dd><p>Regrids input_dataset to sub_sampled_grid to
-properly analyze high-res source data into each coarse cell.  (Originally created by Frank Bryan in Fortran for NCAR/tx2_3, reimplemented in Python)</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>input_dataset</strong> (<em>xr.Dataset</em><em> (</em><em>not curvilinear</em><em>)</em>)</p></li>
-<li><p><strong>qlon</strong> (<em>np.ndarray  shape</em><em> (</em><em>ny+1</em><em>, </em><em>nx+1</em><em>)</em>) – Corner coordinates of the destination grid.</p></li>
-<li><p><strong>qlat</strong> (<em>np.ndarray  shape</em><em> (</em><em>ny+1</em><em>, </em><em>nx+1</em><em>)</em>) – Corner coordinates of the destination grid.</p></li>
-<li><p><strong>nx_sub</strong> (<em>int</em>) – Number of sub-points per cell (typically from compute_subsampling_factor).</p></li>
-<li><p><strong>ny_sub</strong> (<em>int</em>) – Number of sub-points per cell (typically from compute_subsampling_factor).</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>regridded_dataset</strong> – Regridded dataset with dimensions (…, ny, nx, ny_sub, nx_sub), where the sub-sampling points are kept as separate dimensions. (User should perform stats calc)</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>xr.Dataset</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="mom6_forge.mapping.source_to_dst">
-<span class="sig-prename descclassname"><span class="pre">mom6_forge.mapping.</span></span><span class="sig-name descname"><span class="pre">source_to_dst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds_weights</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src_idx_2d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.mapping.source_to_dst" title="Link to this definition"></a></dt>
-<dd><p>Given a 2D source index and a weights file, find which destination cells it contributes to.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ds_weights</strong> (<em>xr.Dataset   SCRIP-format weight dataset</em>)</p></li>
-<li><p><strong>src_idx_2d</strong> (<em>tuple</em><em> (</em><em>j</em><em>, </em><em>i</em><em>) </em><em>2D index into source grid</em>)</p></li>
-</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -1678,7 +1422,7 @@ geographical coordinates will be used as axes. Default is False.</p></li>
 <span id="mom6-forge-topo-module"></span><h2>mom6_forge.topo module<a class="headerlink" href="#module-mom6_forge.topo" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="mom6_forge.topo.Topo">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">mom6_forge.topo.</span></span><span class="sig-name descname"><span class="pre">Topo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_widths</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version_control_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'TopoLibrary'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">git</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.topo.Topo" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">mom6_forge.topo.</span></span><span class="sig-name descname"><span class="pre">Topo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version_control_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'TopoLibrary'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">git</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.topo.Topo" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Bathymetry Generator for MOM6 grids (mom6_forge.grid.Grid).</p>
 <p>MOM6 Simpler Models bathymetry constructor.</p>
@@ -1687,7 +1431,6 @@ geographical coordinates will be used as axes. Default is False.</p></li>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>grid</strong> (<a class="reference internal" href="#mom6_forge.grid.Grid" title="mom6_forge.grid.Grid"><em>mom6_forge.grid.Grid</em></a>) – horizontal grid instance for which the bathymetry is to be created.</p></li>
 <li><p><strong>min_depth</strong> (<em>float</em>) – Minimum water column depth. Columns with shallow depths are to be masked out.</p></li>
-<li><p><strong>channel_widths</strong> (<em>str</em><em> | </em><em>Path</em><em> | </em><em>ChannelWidthList</em><em>, </em><em>optional</em>) – Channel width constraints. Can be a filepath to load from, a ChannelWidthList object, or None.</p></li>
 <li><p><strong>version_control_dir</strong> (<em>str</em><em>, </em><em>optional</em>) – Directory in which to store version-controlled bathymetry data. Defaults to
 “TopoLibrary”. Ignored if git is False (version control is no longer used)</p></li>
 <li><p><strong>git</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True (default), initialize a git repository for version control and
@@ -1741,23 +1484,31 @@ If version control is disabled, the command is executed directly without recordi
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="mom6_forge.topo.Topo.compute_stats">
-<span class="sig-name descname"><span class="pre">compute_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nx_sub</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ny_sub</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_hmin</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.topo.Topo.compute_stats" title="Link to this definition"></a></dt>
-<dd><p>Compute per-cell depth statistics by uniform sub-sampling.</p>
-<p>Results are stored on <code class="docutils literal notranslate"><span class="pre">stats</span></code> so a second call with the
-same source file returns immediately without recomputation.
-(Originally created by Frank Bryan in Fortran for NCAR/tx2_3, reimplemented in Python)</p>
+<dt class="sig sig-object py" id="mom6_forge.topo.Topo.config_dataset">
+<span class="sig-name descname"><span class="pre">config_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bathymetry_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">longitude_coordinate_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latitude_coordinate_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertical_coordinate_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill_channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">positive_down</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PosixPath('.')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_to_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.topo.Topo.config_dataset" title="Link to this definition"></a></dt>
+<dd><p>Sets up necessary objects/files for regridding bathymetry. Can be flexibly used with
+mapping.regrid_bathy_dataset() or user can manually regrid with ESMF_regrid.</p>
+<p>If manual regridding is necessary, write_to_file must be set to True.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>src</strong> (<em>SourceBathy</em><em> (</em><em>part</em><em> of </em><em>class</em><em>)</em>)</p></li>
-<li><p><strong>nx_sub</strong> (<em>int</em>)</p></li>
-<li><p><strong>ny_sub</strong> (<em>int</em>)</p></li>
-<li><p><strong>mask_hmin</strong> (<em>float</em>)</p></li>
+<li><p><strong>bathymetry_path</strong> (<em>str</em>) – Path to netCDF file with bathymetry data.</p></li>
+<li><p><strong>longitude_coordinate_name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The name of the longitude coordinate in the bathymetry
+dataset at <code class="docutils literal notranslate"><span class="pre">bathymetry_path</span></code>. For example, for GEBCO bathymetry: <code class="docutils literal notranslate"><span class="pre">'lon'</span></code> (default).</p></li>
+<li><p><strong>latitude_coordinate_name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The name of the latitude coordinate in the bathymetry
+dataset at <code class="docutils literal notranslate"><span class="pre">bathymetry_path</span></code>. For example, for GEBCO bathymetry: <code class="docutils literal notranslate"><span class="pre">'lat'</span></code> (default).</p></li>
+<li><p><strong>vertical_coordinate_name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The name of the vertical coordinate in the bathymetry
+dataset at <code class="docutils literal notranslate"><span class="pre">bathymetry_path</span></code>. For example, for GEBCO bathymetry: <code class="docutils literal notranslate"><span class="pre">'elevation'</span></code> (default).</p></li>
+<li><p><strong>output_dir</strong> – str | Path
+The str or Path the write to file should write to. Defaults to the directory the script is running in.</p></li>
+<li><p><strong>write_to_file</strong> (<em>Optional</em><em>[</em><em>bool</em><em>]</em>) – Files saved to <code class="docutils literal notranslate"><span class="pre">output_dir</span></code>. Defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code>. Must be set to true if using manual regridding methods with ESMF_regrid.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>xr.Dataset  —  <code class="docutils literal notranslate"><span class="pre">OCN_FRAC</span></code>, <code class="docutils literal notranslate"><span class="pre">D_mean</span></code>, <code class="docutils literal notranslate"><span class="pre">D_min</span></code>, <code class="docutils literal notranslate"><span class="pre">D_max</span></code>, <code class="docutils literal notranslate"><span class="pre">D2_mean</span></code>.</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>where <code class="docutils literal notranslate"><span class="pre">bathymetry_output</span></code> is the original bathymetry data with proper metadata and attributes and <code class="docutils literal notranslate"><span class="pre">empty_bathy</span></code> is a template for the regridder.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(<code class="docutils literal notranslate"><span class="pre">bathymetry_output</span></code>,``empty_bathy``) (tuple of Datasets)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1766,64 +1517,6 @@ same source file returns immediately without recomputation.
 <dt class="sig sig-object py" id="mom6_forge.topo.Topo.depth">
 <span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">depth</span></span><a class="headerlink" href="#mom6_forge.topo.Topo.depth" title="Link to this definition"></a></dt>
 <dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="mom6_forge.topo.Topo.diagnose_resolution">
-<span class="sig-name descname"><span class="pre">diagnose_resolution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6371000.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.topo.Topo.diagnose_resolution" title="Link to this definition"></a></dt>
-<dd><p>Print resolution diagnostics comparing the model grid to a source bathymetry
-dataset, and recommend whether Cressman interpolation / stats-based masking
-is worthwhile.</p>
-<p>The recommendation threshold is a resolution ratio of 12x (model dx /
-dataset dx), equivalent to ~0.05° (~5 km) for GEBCO 15-arcsecond source
-data. This matches the criterion used by the tx2_3 global workflow
-(interp_smooth.f90) and might be the scale at which ocean-aware Cressman
-interpolation meaningfully improves coastal depth estimates over standard
-xesmf conservative regridding.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>src</strong> (<em>SourceBathy</em><em> (</em><em>provided internally by the class</em><em>)</em>) – Source bathymetry object.</p></li>
-<li><p><strong>radius</strong> (<em>float</em><em>, </em><em>optional</em>) – Radius of the Earth in meters, used to convert source dataset lat/lon spacing to approximate physical spacing in meters at the domain’s mid-latitude. Default is 6.371e6 m.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>True if Cressman / stats-based masking is recommended (ratio &gt;= 12x),
-False otherwise.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="mom6_forge.topo.Topo.direct_cressman_interp">
-<span class="sig-name descname"><span class="pre">direct_cressman_interp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">smooth_scl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cressman_exp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.topo.Topo.direct_cressman_interp" title="Link to this definition"></a></dt>
-<dd><p>Assign ocean depths using Cressman distance-weighted interpolation.
-Mirrors <code class="docutils literal notranslate"><span class="pre">interp_smooth.f90</span></code> from the tx2_3 topography workflow.</p>
-<p>For each ocean T-cell a smoothing radius <code class="docutils literal notranslate"><span class="pre">L</span> <span class="pre">=</span> <span class="pre">smooth_scl</span> <span class="pre">*</span> <span class="pre">sqrt(cell_area)</span></code>
-is computed. Source ocean points within <code class="docutils literal notranslate"><span class="pre">L</span></code> are averaged with weights</p>
-<div class="math notranslate nohighlight">
-\[w = \left(\frac{L^2 - r^2}{L^2 + r^2}\right)^{c}\]</div>
-<p>where <code class="docutils literal notranslate"><span class="pre">r</span></code> is the great-circle arc distance and <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">cressman_exp</span></code>.
-Only source points with positive depth (ocean) contribute, so depth
-estimates are never contaminated by land elevations.</p>
-<p>Weights are computed by <a class="reference internal" href="#mom6_forge.mapping.compute_cressman_weights" title="mom6_forge.mapping.compute_cressman_weights"><code class="xref py py-func docutils literal notranslate"><span class="pre">compute_cressman_weights()</span></code></a>,
-saved to an ESMF-compatible netCDF, and applied through <code class="docutils literal notranslate"><span class="pre">xe.Regridder</span></code> —
-all orchestrated by <a class="reference internal" href="#mom6_forge.mapping.regrid_dataset_via_cressman" title="mom6_forge.mapping.regrid_dataset_via_cressman"><code class="xref py py-func docutils literal notranslate"><span class="pre">regrid_dataset_via_cressman()</span></code></a>.
-Cells that receive no source coverage are filled by iterative neighbour
-averaging (up to 100 passes).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>smooth_scl</strong> (<em>float</em>) – Smoothing scale multiplier for the Cressman radius. Default <code class="docutils literal notranslate"><span class="pre">2.0</span></code>.</p></li>
-<li><p><strong>cressman_exp</strong> (<em>float</em>) – Exponent for the Cressman weight function. Default <code class="docutils literal notranslate"><span class="pre">2.0</span></code>.</p></li>
-<li><p><strong>weights_path</strong> (<em>str</em><em> or </em><em>Path</em><em> or </em><em>None</em>) – Where to save the ESMF weights netCDF. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, a file named
-<code class="docutils literal notranslate"><span class="pre">cressman_weights.nc</span></code> is written next to the bathymetry file.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="mom6_forge.topo.Topo.edit_depth">
@@ -1850,14 +1543,8 @@ averaging (up to 100 passes).</p>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="mom6_forge.topo.Topo.fill_inland_lakes_and_channels">
-<span class="sig-name descname"><span class="pre">fill_inland_lakes_and_channels</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.topo.Topo.fill_inland_lakes_and_channels" title="Link to this definition"></a></dt>
-<dd><p>Fill in one-cell-wide channels and inland lakes. This removes more narrow inlets, but can also connect extra islands to land.</p>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="mom6_forge.topo.Topo.from_topo_file">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">from_topo_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">topo_file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">varname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'depth'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version_control_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'TopoLibrary'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">git</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_widths</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.topo.Topo.from_topo_file" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">from_topo_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">topo_file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">varname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'depth'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version_control_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'TopoLibrary'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">git</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.topo.Topo.from_topo_file" title="Link to this definition"></a></dt>
 <dd><p>Create a bathymetry object from an existing topog file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1867,8 +1554,6 @@ averaging (up to 100 passes).</p>
 <li><p><strong>min_depth</strong> (<em>float</em><em>, </em><em>optional</em>) – Minimum water column depth (m). Columns with shallower depths are to be masked out.</p></li>
 <li><p><strong>varname</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the variable representing ocean depth in the dataset. Default is “depth”.</p></li>
 <li><p><strong>git</strong> (<em>bool</em><em>, </em><em>optional</em>) – Passed through to Topo.__init__. See Topo docstring for details.</p></li>
-<li><p><strong>version_control_dir</strong> (<em>str</em><em>, </em><em>optional</em>) – Directory for version control. Default is “TopoLibrary”.</p></li>
-<li><p><strong>channel_widths</strong> (<em>str</em><em> | </em><em>Path</em><em> | </em><em>ChannelWidthList</em><em>, </em><em>optional</em>) – Channel width constraints. Can be a filepath to load from, a ChannelWidthList object, or None.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1876,14 +1561,11 @@ averaging (up to 100 passes).</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="mom6_forge.topo.Topo.from_version_control">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">from_version_control</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_widths</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.topo.Topo.from_version_control" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">from_version_control</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.topo.Topo.from_version_control" title="Link to this definition"></a></dt>
 <dd><p>Create a bathymetry object from an existing version-controlled bathymetry folder.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>folder_path</strong> (<em>str</em><em> | </em><em>Path</em>) – Path to an existing bathymetry folder created by mom6_forge with version control enabled.</p></li>
-<li><p><strong>channel_widths</strong> (<em>str</em><em> | </em><em>Path</em><em> | </em><em>ChannelWidthList</em><em>, </em><em>optional</em>) – Channel width constraints. Can be a filepath to load from, a ChannelWidthList object, or None.</p></li>
-</ul>
+<dd class="field-odd"><p><strong>folder_path</strong> (<em>str</em><em> | </em><em>Path</em>) – Path to an existing bathymetry folder created by mom6_forge with version control enabled.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1931,33 +1613,6 @@ averaging (up to 100 passes).</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="mom6_forge.topo.Topo.generate_mask_from_stats_ocean_frac">
-<span class="sig-name descname"><span class="pre">generate_mask_from_stats_ocean_frac</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mask_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.topo.Topo.generate_mask_from_stats_ocean_frac" title="Link to this definition"></a></dt>
-<dd><p>Generate an ocean mask by uniform sub-sampling of the source bathymetry.</p>
-<p>Mirrors the algorithm in tx2_3’s create_model_topo.f90. For each T-cell,
-distributes nx_sub x ny_sub interior points via bilinear interpolation of
-the Q-point corners and snaps each to the nearest source pixel. A cell is
-ocean if its ocean sub-point fraction (OCN_FRAC) meets or exceeds
-<code class="docutils literal notranslate"><span class="pre">mask_threshold</span></code>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>mask_threshold</strong> (<em>float</em><em>, </em><em>optional</em>) – Minimum OCN_FRAC for a cell to be classified as ocean. Default 0.5.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Binary ocean mask on the T-grid (1 = ocean, 0 = land),
-dims <code class="docutils literal notranslate"><span class="pre">[&quot;ny&quot;,</span> <span class="pre">&quot;nx&quot;]</span></code>.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>xr.DataArray</p>
-</dd>
-</dl>
-<p class="rubric">Notes</p>
-<p><code class="docutils literal notranslate"><span class="pre">compute_stats</span></code> must be called before this method. Per-cell depth
-statistics (D_mean, D_min, D_max, D2_mean) are stored on the source
-bathymetry object for use by this and other downstream methods.</p>
-</dd></dl>
-
 <dl class="py property">
 <dt class="sig sig-object py" id="mom6_forge.topo.Topo.has_version_control">
 <span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">has_version_control</span></span><a class="headerlink" href="#mom6_forge.topo.Topo.has_version_control" title="Link to this definition"></a></dt>
@@ -1993,34 +1648,9 @@ this property is computed on-the-fly. To modify depth, use <cite>topo.depth = ne
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="mom6_forge.topo.Topo.mpi_set_depth_from_xesmf">
-<span class="sig-name descname"><span class="pre">mpi_set_depth_from_xesmf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">bathymetry_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">longitude_coordinate_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latitude_coordinate_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertical_coordinate_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_input_positive_below_msl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PosixPath('.')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.topo.Topo.mpi_set_depth_from_xesmf" title="Link to this definition"></a></dt>
-<dd><p>Prepare input files for MPI-parallel bathymetry regridding with ESMF_Regrid.</p>
-<p>Writes <code class="docutils literal notranslate"><span class="pre">bathymetry_original.nc</span></code> (source) and <code class="docutils literal notranslate"><span class="pre">bathymetry_unfinished.nc</span></code>
-(destination grid shell) to <code class="docutils literal notranslate"><span class="pre">output_dir</span></code>. The user then runs <code class="docutils literal notranslate"><span class="pre">ESMF_Regrid</span></code>
-externally with MPI, and finally calls <code class="docutils literal notranslate"><span class="pre">fill_inland_lakes_and_channels()</span></code> to
-complete post-processing. Use this instead of <code class="docutils literal notranslate"><span class="pre">set_depth_from_xesmf</span></code> when the
-domain is too large to regrid within a single Python process.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>bathymetry_path</strong> (<em>str</em>) – Path to the netCDF file with the source bathymetry.</p></li>
-<li><p><strong>longitude_coordinate_name</strong> (<em>str</em>) – Name of the longitude coordinate in the
-source dataset (e.g. <code class="docutils literal notranslate"><span class="pre">'lon'</span></code> for GEBCO).</p></li>
-<li><p><strong>latitude_coordinate_name</strong> (<em>str</em>) – Name of the latitude coordinate in the
-source dataset (e.g. <code class="docutils literal notranslate"><span class="pre">'lat'</span></code> for GEBCO).</p></li>
-<li><p><strong>vertical_coordinate_name</strong> (<em>str</em>) – Name of the vertical/elevation coordinate in
-the source dataset (e.g. <code class="docutils literal notranslate"><span class="pre">'elevation'</span></code> for GEBCO).</p></li>
-<li><p><strong>is_input_positive_below_msl</strong> (<em>bool</em><em>, </em><em>optional</em>) – Set <code class="docutils literal notranslate"><span class="pre">True</span></code> if the source
-vertical coordinate is positive downwards (depth convention). Default: <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
-<li><p><strong>output_dir</strong> (<em>str</em><em> or </em><em>Path</em><em>, </em><em>optional</em>) – Directory where the two netCDF files are
-written. Default: current directory.</p></li>
-<li><p><strong>verbose</strong> (<em>bool</em><em>, </em><em>optional</em>) – Print step-by-step MPI regridding instructions.
-Default: <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
+<dt class="sig sig-object py" id="mom6_forge.topo.Topo.mpi_set_from_dataset">
+<span class="sig-name descname"><span class="pre">mpi_set_from_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">bathymetry_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">longitude_coordinate_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latitude_coordinate_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertical_coordinate_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill_channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">positive_down</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PosixPath('.')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_to_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.topo.Topo.mpi_set_from_dataset" title="Link to this definition"></a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="mom6_forge.topo.Topo.point_is_ocean">
@@ -2058,40 +1688,6 @@ Modifies _depth, preserves mask.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="mom6_forge.topo.Topo.set_depth_from_stats">
-<span class="sig-name descname"><span class="pre">set_depth_from_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">statistic</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.topo.Topo.set_depth_from_stats" title="Link to this definition"></a></dt>
-<dd><p>Set the topo depth to a statistic computed by compute_stats.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>statistic</strong> (<em>str</em>) – Which depth statistic to use. Must be one of the “D_*” keys
-in self.src.stats (e.g. “mean”, “min”, “max”).</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="mom6_forge.topo.Topo.set_depth_from_xesmf">
-<span class="sig-name descname"><span class="pre">set_depth_from_xesmf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PosixPath('.')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_to_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regridding_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'bilinear'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.topo.Topo.set_depth_from_xesmf" title="Link to this definition"></a></dt>
-<dd><p>Regrid the source bathymetry onto the model grid using xESMF.</p>
-<p>This code was originally written by Ashley Barnes in regional_mom6
-(<a class="reference external" href="https://github.com/COSIMA/regional-mom6">https://github.com/COSIMA/regional-mom6</a>) and adapted for this package.</p>
-<p>Requires that <code class="docutils literal notranslate"><span class="pre">set_src</span></code> has been called first (or that the source dataset
-has been set via <code class="docutils literal notranslate"><span class="pre">set_from_dataset</span></code>).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>output_dir</strong> (<em>str</em><em> or </em><em>Path</em><em>, </em><em>optional</em>) – Directory where intermediate files are
-written when <code class="docutils literal notranslate"><span class="pre">write_to_file=True</span></code>. Default: current directory.</p></li>
-<li><p><strong>write_to_file</strong> (<em>Optional</em><em>[</em><em>bool</em><em>]</em>) – Whether to write the source and unfinished
-destination grids to netCDF before regridding. Default: <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
-<li><p><strong>regridding_method</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The xESMF regridding method to use.
-Default: <code class="docutils literal notranslate"><span class="pre">'bilinear'</span></code>.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="mom6_forge.topo.Topo.set_depth_via_topog_file">
 <span class="sig-name descname"><span class="pre">set_depth_via_topog_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topog_file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">varname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'depth'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_version_control</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.topo.Topo.set_depth_via_topog_file" title="Link to this definition"></a></dt>
 <dd><p>Apply a bathymetry read from an existing topog file</p>
@@ -2118,41 +1714,31 @@ Default: <code class="docutils literal notranslate"><span class="pre">'bilinear'
 
 <dl class="py method">
 <dt class="sig sig-object py" id="mom6_forge.topo.Topo.set_from_dataset">
-<span class="sig-name descname"><span class="pre">set_from_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bathymetry_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">longitude_coordinate_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latitude_coordinate_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertical_coordinate_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill_channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_input_positive_below_msl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PosixPath('.')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_to_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regridding_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'bilinear'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.topo.Topo.set_from_dataset" title="Link to this definition"></a></dt>
-<dd><p>This is a high-level workflow function that runs multiple steps in sequence to set the bathymetry from a source dataset, with optional masking and depth method choices. It is designed to be opinionated and make recommendations based on resolution diagnostics, but users can override the defaults by specifying mask_method and depth_method.
-The workflow is as follows:
-1. Set the source dataset (this will not modify the depth or mask yet,</p>
-<blockquote>
-<div><p>it just loads the dataset and prepares it for regridding)</p>
-</div></blockquote>
-<ol class="arabic simple" start="2">
-<li><p>Diagnose whether to use stats-based masking and Cressman interpolation based on resolution comparison between the source dataset and the model grid</p></li>
-<li><p>Apply a mask based on the user’s choice or the resolution diagnostics recommendation (options are ‘naturalearth’, ‘ocean_frac’, ‘dataset’, ‘manual’, or None)</p></li>
-<li><p>Set the depth based on the user’s choice or the resolution diagnostics recommendation (options are ‘stats’, ‘xesmf’, or None)</p></li>
-<li><p>Call <code class="docutils literal notranslate"><span class="pre">fill_inland_lakes_and_channels()</span></code> to finish processing the bathymetry (fill channels, apply mask, etc.)</p></li>
-</ol>
+<span class="sig-name descname"><span class="pre">set_from_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bathymetry_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">longitude_coordinate_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latitude_coordinate_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertical_coordinate_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill_channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">positive_down</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PosixPath('.')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_to_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regridding_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'bilinear'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run_config_dataset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run_regrid_dataset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run_tidy_dataset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.topo.Topo.set_from_dataset" title="Link to this definition"></a></dt>
+<dd><p>This code was originally written by Ashley Barnes in regional_mom6(<a class="reference external" href="https://github.com/COSIMA/regional-mom6">https://github.com/COSIMA/regional-mom6</a>) and adapted for this package.</p>
+<p>Cut out and interpolate the chosen bathymetry and then fill inland lakes.</p>
+<p>Users can optionally fill narrow channels (see <code class="docutils literal notranslate"><span class="pre">fill_channels</span></code> keyword argument
+below). Note, however, that narrow channels are less of an issue for models that
+are discretized on an Arakawa C grid, like MOM6.</p>
+<p>Output is saved in the output_dir.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>(</strong><strong>str</strong><strong>)</strong> (<em>vertical_coordinate_name</em>)</p></li>
-<li><p><strong>(</strong><strong>str</strong><strong>)</strong></p></li>
-<li><p><strong>(</strong><strong>str</strong><strong>)</strong></p></li>
-<li><p><strong>(</strong><strong>str</strong><strong>)</strong></p></li>
-<li><p><strong>(</strong><strong>bool</strong> (<em>write_to_file</em>)</p></li>
-<li><p><strong>optional</strong><strong>)</strong> (<em>The xESMF regridding method to use when depth_method is 'xesmf'</em><em> (or </em><em>when xesmf is chosen automatically</em><em>)</em><em>. Default is 'bilinear'.</em>)</p></li>
-<li><p><strong>(</strong><strong>bool</strong></p></li>
-<li><p><strong>optional</strong><strong>)</strong></p></li>
-<li><p><strong>Path</strong> (<em>output_dir</em><em> (</em><em>str or</em>)</p></li>
-<li><p><strong>optional</strong><strong>)</strong></p></li>
-<li><p><strong>(</strong><strong>bool</strong></p></li>
-<li><p><strong>optional</strong><strong>)</strong></p></li>
-<li><p><strong>None</strong> (<em>depth_method</em><em> (</em><em>str or</em>)</p></li>
-<li><p><strong>optional</strong><strong>)</strong></p></li>
-<li><p><strong>None</strong></p></li>
-<li><p><strong>optional</strong><strong>)</strong></p></li>
-<li><p><strong>(</strong><strong>str</strong> (<em>regridding_method</em>)</p></li>
-<li><p><strong>optional</strong><strong>)</strong></p></li>
-<li><p><strong>**kwargs</strong> (<em>Additional keyword arguments needed for specific mask</em><em> or </em><em>depth methods. For example</em><em>, </em><em>if mask_method is 'ocean_frac'</em><em>, </em><em>then kwargs should include 'nx_sub'</em><em>, </em><em>'ny_sub'</em><em>, </em><em>and 'mask_hmin' for the sub-sampling stats calculation.</em>)</p></li>
+<li><p><strong>bathymetry_path</strong> (<em>str</em>) – Path to the netCDF file with the bathymetry.</p></li>
+<li><p><strong>longitude_coordinate_name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The name of the longitude coordinate in the bathymetry
+dataset at <code class="docutils literal notranslate"><span class="pre">bathymetry_path</span></code>. For example, for GEBCO bathymetry: <code class="docutils literal notranslate"><span class="pre">'lon'</span></code> (default).</p></li>
+<li><p><strong>latitude_coordinate_name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The name of the latitude coordinate in the bathymetry
+dataset at <code class="docutils literal notranslate"><span class="pre">bathymetry_path</span></code>. For example, for GEBCO bathymetry: <code class="docutils literal notranslate"><span class="pre">'lat'</span></code> (default).</p></li>
+<li><p><strong>vertical_coordinate_name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The name of the vertical coordinate in the bathymetry
+dataset at <code class="docutils literal notranslate"><span class="pre">bathymetry_path</span></code>. For example, for GEBCO bathymetry: <code class="docutils literal notranslate"><span class="pre">'elevation'</span></code> (default).</p></li>
+<li><p><strong>fill_channels</strong> (<em>Optional</em><em>[</em><em>bool</em><em>]</em>) – Whether or not to fill in
+diagonal channels. This removes more narrow inlets,
+but can also connect extra islands to land. Default: <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><strong>positive_down</strong> (<em>Optional</em><em>[</em><em>bool</em><em>]</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, it assumes that the
+bathymetry vertical coordinate is positive downwards. Default: <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><strong>write_to_file</strong> (<em>Optional</em><em>[</em><em>bool</em><em>]</em>) – Whether to write the bathymetry to a file. Default: <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>regridding_method</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The type of regridding method to use. Defaults to self.regridding_method</p></li>
+<li><p><strong>run_*</strong> (<em>Optional</em><em>[</em><em>bool</em><em>]</em>) – Whether to run the respective step in the bathymetry processing. Default: <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2175,27 +1761,36 @@ parameter to “spoon”.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="mom6_forge.topo.Topo.set_src">
-<span class="sig-name descname"><span class="pre">set_src</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bathymetry_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">longitude_coordinate_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latitude_coordinate_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertical_coordinate_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_input_positive_below_msl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.topo.Topo.set_src" title="Link to this definition"></a></dt>
-<dd><p>Set a <code class="xref py py-class docutils literal notranslate"><span class="pre">SourceBathy</span></code> into a class object called src</p>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="mom6_forge.topo.Topo.src">
-<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">src</span></span><a class="headerlink" href="#mom6_forge.topo.Topo.src" title="Link to this definition"></a></dt>
-<dd><p>SourceBathy object representing the source bathymetry dataset sliced to the topo grid extent. This is set by set_src() when a new source bathymetry is specified, and can be accessed for any source dataset.</p>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="mom6_forge.topo.Topo.stats">
-<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">stats</span></span><a class="headerlink" href="#mom6_forge.topo.Topo.stats" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
 <dl class="py property">
 <dt class="sig sig-object py" id="mom6_forge.topo.Topo.supergridmask">
 <span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">supergridmask</span></span><a class="headerlink" href="#mom6_forge.topo.Topo.supergridmask" title="Link to this definition"></a></dt>
 <dd><p>Ocean domain mask on supergrid. 1 if ocean, 0 if land.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mom6_forge.topo.Topo.tidy_dataset">
+<span class="sig-name descname"><span class="pre">tidy_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fill_channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">positive_down</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertical_coordinate_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'depth'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bathymetry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PosixPath('.')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_to_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">longitude_coordinate_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'lon'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latitude_coordinate_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'lat'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.topo.Topo.tidy_dataset" title="Link to this definition"></a></dt>
+<dd><p>An auxiliary method for bathymetry used to fix up the metadata and remove inland
+lakes after regridding the bathymetry. Having <a class="reference internal" href="#mom6_forge.topo.Topo.tidy_dataset" title="mom6_forge.topo.Topo.tidy_dataset"><code class="xref py py-func docutils literal notranslate"><span class="pre">tidy_dataset()</span></code></a> as a separate
+method from <code class="xref py py-func docutils literal notranslate"><span class="pre">setup_bathymetry()</span></code> allows for the regridding to be done separately,
+since regridding can be really expensive for large domains.</p>
+<p>If the bathymetry is already regridded and what is left to be done is fixing the metadata
+or fill in some channels, then <a class="reference internal" href="#mom6_forge.topo.Topo.tidy_dataset" title="mom6_forge.topo.Topo.tidy_dataset"><code class="xref py py-func docutils literal notranslate"><span class="pre">tidy_dataset()</span></code></a> directly can read the existing
+<code class="docutils literal notranslate"><span class="pre">bathymetry_unfinished.nc</span></code> file that should be in the input directory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fill_channels</strong> (<em>Optional</em><em>[</em><em>bool</em><em>]</em>) – Whether to fill in diagonal channels.
+This removes more narrow inlets, but can also connect extra islands to land.
+Default: <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><strong>positive_down</strong> (<em>Optional</em><em>[</em><em>bool</em><em>]</em>) – If <code class="docutils literal notranslate"><span class="pre">False</span></code> (default), assume that
+bathymetry vertical coordinate is positive down, as is the case in GEBCO for example.</p></li>
+<li><p><strong>bathymetry</strong> (<em>Optional</em><em>[</em><em>xr.Dataset</em><em>]</em>) – The bathymetry dataset to tidy up. If not provided,
+it will read the bathymetry from the file <code class="docutils literal notranslate"><span class="pre">bathymetry_unfinished.nc</span></code> in the input directory
+that was created by <code class="xref py py-func docutils literal notranslate"><span class="pre">config/regrid_dataset()</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py property">
@@ -2287,27 +1882,6 @@ to be read in by MOM6 during runtime.</p>
 </ul>
 </dd>
 </dl>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If channel_widths is not empty, remember to also write those constraints using
-channel_widths.write(channel_file_path).</p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="mom6_forge.topo.Topo.write_ww3_input">
-<span class="sig-name descname"><span class="pre">write_ww3_input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_alias</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.topo.Topo.write_ww3_input" title="Link to this definition"></a></dt>
-<dd><p>Write the text-based WW3 input files ww3_grid.inp, [grid_alias]_x.inp, [grid_alias]_y.inp,
-[grid_alias]_mapsta.inp, [grid_alias]_bottom.inp, which are to be read by the WW3
-mod_def creator before runtime to generate the WW3 grid files.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>file_dir</strong> (<em>str</em>) – Directory to write the WW3 input files to.</p></li>
-<li><p><strong>grid_alias</strong> (<em>str</em>) – The alias for the grid, which will be used in the file names of the WW3 input files.</p></li>
-</ul>
-</dd>
-</dl>
 </dd></dl>
 
 </dd></dl>
@@ -2320,21 +1894,10 @@ mod_def creator before runtime to generate the WW3 grid files.</p>
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">mom6_forge.topo_editor.</span></span><span class="sig-name descname"><span class="pre">TopoEditor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">t.Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">t.Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.topo_editor.TopoEditor" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">HBox</span></code></p>
 <p>Public constructor</p>
-<dl class="py property">
-<dt class="sig sig-object py" id="mom6_forge.topo_editor.TopoEditor.active_cells">
-<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">active_cells</span></span><a class="headerlink" href="#mom6_forge.topo_editor.TopoEditor.active_cells" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="mom6_forge.topo_editor.TopoEditor.apply_edit">
 <span class="sig-name descname"><span class="pre">apply_edit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.topo_editor.TopoEditor.apply_edit" title="Link to this definition"></a></dt>
 <dd><p>Apply an edit command, update the UI, and autosave the working state.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="mom6_forge.topo_editor.TopoEditor.clear_user_mask">
-<span class="sig-name descname"><span class="pre">clear_user_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.topo_editor.TopoEditor.clear_user_mask" title="Link to this definition"></a></dt>
-<dd><p>Clear the manual mask if it exists.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2403,11 +1966,6 @@ The plot is embedded in a widget for use in the Jupyter interface.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="mom6_forge.topo_editor.TopoEditor.on_mask_change">
-<span class="sig-name descname"><span class="pre">on_mask_change</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">change</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.topo_editor.TopoEditor.on_mask_change" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="mom6_forge.topo_editor.TopoEditor.on_min_depth_change">
 <span class="sig-name descname"><span class="pre">on_min_depth_change</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">change</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.topo_editor.TopoEditor.on_min_depth_change" title="Link to this definition"></a></dt>
 <dd><p>Handle changes to the minimum depth specifier.</p>
@@ -2436,21 +1994,6 @@ The plot is embedded in a widget for use in the Jupyter interface.</p>
 <span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">change</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.topo_editor.TopoEditor.reset" title="Link to this definition"></a></dt>
 <dd><p>Reset the topo to its original state and update the UI.</p>
 </dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="mom6_forge.topo_editor.TopoEditor.set_depth_to_max">
-<span class="sig-name descname"><span class="pre">set_depth_to_max</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.topo_editor.TopoEditor.set_depth_to_max" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="mom6_forge.topo_editor.TopoEditor.set_depth_to_mean">
-<span class="sig-name descname"><span class="pre">set_depth_to_mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.topo_editor.TopoEditor.set_depth_to_mean" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="mom6_forge.topo_editor.TopoEditor.set_depth_to_min">
-<span class="sig-name descname"><span class="pre">set_depth_to_min</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.topo_editor.TopoEditor.set_depth_to_min" title="Link to this definition"></a></dt>
-<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="mom6_forge.topo_editor.TopoEditor.trigger_refresh">
@@ -2492,29 +2035,6 @@ The plot is embedded in a widget for use in the Jupyter interface.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>np.ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="mom6_forge.utils.compute_subsampling_factor">
-<span class="sig-prename descclassname"><span class="pre">mom6_forge.utils.</span></span><span class="sig-name descname"><span class="pre">compute_subsampling_factor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_nj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src_ni</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst_nj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst_ni</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.utils.compute_subsampling_factor" title="Link to this definition"></a></dt>
-<dd><p>Compute the sub-sampling factors needed so that the super-sampled
-destination grid has at least as many points as the source grid.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>src_nj</strong> (<em>int</em>) – Source grid dimensions.</p></li>
-<li><p><strong>src_ni</strong> (<em>int</em>) – Source grid dimensions.</p></li>
-<li><p><strong>dst_nj</strong> (<em>int</em>) – Destination grid dimensions.</p></li>
-<li><p><strong>dst_ni</strong> (<em>int</em>) – Destination grid dimensions.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>ny_sub, nx_sub</strong></p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>int</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2600,66 +2120,42 @@ compute the dimensions of the 2D grid and return them as nx, ny.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="mom6_forge.utils.iterative_fill">
-<span class="sig-prename descclassname"><span class="pre">mom6_forge.utils.</span></span><span class="sig-name descname"><span class="pre">iterative_fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unfilled</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.utils.iterative_fill" title="Link to this definition"></a></dt>
-<dd><p>Iteratively fill unfilled ocean cells from their neighbours. May not work for periodic grids.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>depth</strong> (<em>np.ndarray</em><em>, </em><em>shape</em><em> (</em><a class="reference internal" href="#mom6_forge.grid.Grid.ny" title="mom6_forge.grid.Grid.ny"><em>ny</em></a><em>, </em><a class="reference internal" href="#mom6_forge.grid.Grid.nx" title="mom6_forge.grid.Grid.nx"><em>nx</em></a><em>)</em>) – Depth field to fill in-place.</p></li>
-<li><p><strong>unfilled</strong> (<em>np.ndarray</em><em> of </em><em>bool</em><em>, </em><em>shape</em><em> (</em><a class="reference internal" href="#mom6_forge.grid.Grid.ny" title="mom6_forge.grid.Grid.ny"><em>ny</em></a><em>, </em><a class="reference internal" href="#mom6_forge.grid.Grid.nx" title="mom6_forge.grid.Grid.nx"><em>nx</em></a><em>)</em>) – True for cells that need filling.</p></li>
-<li><p><strong>mask</strong> (<em>array-like</em><em> or </em><em>xr.DataArray</em><em>, </em><em>optional</em>) – Ocean mask (1 = ocean, 0 = land). If provided, land cells are never filled.</p></li>
-<li><p><strong>max_iter</strong> (<em>int</em>) – Maximum number of neighbour-averaging passes. Default 100.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>depth</strong> – Depth array with unfilled ocean cells replaced by neighbour averages.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>np.ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
 <dt class="sig sig-object py" id="mom6_forge.utils.longitude_slicer">
 <span class="sig-prename descclassname"><span class="pre">mom6_forge.utils.</span></span><span class="sig-name descname"><span class="pre">longitude_slicer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">longitude_extent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">longitude_coords</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mom6_forge.utils.longitude_slicer" title="Link to this definition"></a></dt>
-<dd><p>Slice a dataset in longitude, handling periodicity and domain seams.</p>
-<p>Correctly clips datasets whose longitude coordinate may use any
-convention (e.g. <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">360]</span></code> or <code class="docutils literal notranslate"><span class="pre">[-180,</span> <span class="pre">180]</span></code>) and where the
-requested <code class="docutils literal notranslate"><span class="pre">longitude_extent</span></code> may straddle the wrap-around seam.</p>
-<p>The algorithm proceeds in five steps:</p>
-<ol class="arabic simple">
-<li><p>Determine the integer multiple of 360° needed to shift the midpoint
-of <code class="docutils literal notranslate"><span class="pre">longitude_extent</span></code> into the range covered by <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p></li>
-<li><p>Roll the dataset so that its centre aligns with the midpoint of the
-target extent.</p></li>
-<li><p>Rebuild a monotonically increasing longitude coordinate that removes
-the seam introduced by the roll.</p></li>
-<li><p>Index out the required number of longitude points symmetrically
-around the new centre.</p></li>
-<li><p>Re-centre the coordinate values to match the target domain.</p></li>
-</ol>
+<dd><p>Slices longitudes while handling periodicity and the ‘seams’, that is the
+longitude values where the data wraps around in a global domain (for example,
+longitudes are defined, usually, within domain [0, 360] or [-180, 180]).</p>
+<p>The algorithm works in five steps:</p>
+<ul class="simple">
+<li><p>Determine whether we need to add or subtract 360 to get the middle of the
+<code class="docutils literal notranslate"><span class="pre">longitude_extent</span></code> to lie within <code class="docutils literal notranslate"><span class="pre">data</span></code>’s longitude range (hereby <code class="docutils literal notranslate"><span class="pre">old_lon</span></code>).</p></li>
+<li><p>Shift the dataset so that its midpoint matches the midpoint of
+<code class="docutils literal notranslate"><span class="pre">longitude_extent</span></code> (up to a multiple of 360). Now, the modified <code class="docutils literal notranslate"><span class="pre">old_lon</span></code>
+does not increase monotonically from West to East since the ‘seam’
+has moved.</p></li>
+<li><p>Fix <code class="docutils literal notranslate"><span class="pre">old_lon</span></code> to make it monotonically increasing again. This uses
+the information we have about the way the dataset was shifted/rolled.</p></li>
+<li><p>Slice the <code class="docutils literal notranslate"><span class="pre">data</span></code> index-wise. We know that <code class="docutils literal notranslate"><span class="pre">|longitude_extent[1]</span> <span class="pre">-</span> <span class="pre">longitude_extent[0]|</span> <span class="pre">/</span> <span class="pre">360</span></code>
+multiplied by the number of discrete longitude points in the global input data gives
+the number of longitude points in our slice, and we’ve already set the midpoint
+to be the middle of the target domain.</p></li>
+<li><p>Add back the correct multiple of 360 so the whole domain matches the target.</p></li>
+</ul>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<em>xarray.Dataset</em>) – Global (or at least periodic) dataset to slice.  The longitude
-coordinate must be uniformly spaced.</p></li>
-<li><p><strong>longitude_extent</strong> (<em>array-like</em><em> of </em><em>float</em>) – Target longitude bounds <code class="docutils literal notranslate"><span class="pre">(west,</span> <span class="pre">east)</span></code> in degrees, in increasing
-order.</p></li>
-<li><p><strong>longitude_coords</strong> (<em>str</em><em> or </em><em>list</em><em> of </em><em>str</em>) – Name(s) of the longitude coordinate(s) in <code class="docutils literal notranslate"><span class="pre">data</span></code> along which to
-slice.</p></li>
+<li><p><strong>data</strong> (<em>xarray.Dataset</em>) – The global data you want to slice in longitude.</p></li>
+<li><p><strong>longitude_extent</strong> (<em>Tuple</em><em>[</em><em>float</em><em>, </em><em>float</em><em>]</em>) – The target longitudes (in degrees)
+we want to slice to. Must be in increasing order.</p></li>
+<li><p><strong>longitude_coords</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>list</em><em>[</em><em>str</em><em>]</em>) – The name or list of names of the
+longitude coordinates(s) in <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Dataset sliced to <code class="docutils literal notranslate"><span class="pre">longitude_extent</span></code>, with the longitude
-coordinate re-centred to match the target domain.</p>
+<dd class="field-even"><p>The sliced <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>xarray.Dataset</p>
-</dd>
-<dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>AssertionError</strong> – If any named longitude coordinate is not uniformly spaced.</p>
 </dd>
 </dl>
 </dd></dl>
